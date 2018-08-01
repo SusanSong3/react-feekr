@@ -1,0 +1,38 @@
+@import '../../style/usage/core/reset.scss';
+.nav{
+    background: #f6f6f6;
+    @include flexbox();
+    flex-direction: row;
+    padding: .18rem 0;
+    >div{
+        @include flex();
+        @include flexbox();
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // height: .75rem;
+        >div{
+            // margin-top: .2rem;
+            border-radius: 50%;
+            background: white;
+            width: .5rem;
+            height: .5rem;
+            position: relative;
+            img{
+                width: .25rem;
+                height: .25rem;     
+                background: white;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%,-50%);
+            }
+
+        }
+        >span{
+            margin-top: .036rem;
+            font-size: .12rem;
+
+        }
+    }
+}

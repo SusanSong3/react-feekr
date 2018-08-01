@@ -1,0 +1,140 @@
+@import '../../style/usage/core/reset.scss';
+.card{
+    background: white;
+    margin-top: .12rem;
+    height: auto;
+    width: 100%;
+    padding: 0 .12rem;
+    header{
+        text-align: center;
+        font-size: .16rem;
+        vertical-align: middle;
+        color: #2d2d2d;
+        line-height: .288rem;
+        padding: .18rem 0;
+    }
+    .themeSection{
+        @include flexbox();
+        flex-direction: column;
+        text-align: center;
+        a{
+            width: 100%;
+            position: relative;
+            margin-bottom: .18rem;
+            &:last-child{
+                margin:0;
+            }
+            figure{
+                background: black;
+
+                img{
+                    opacity: .8;
+                    width: 100%;
+                    // height: 100%;
+                }
+            }
+            figcaption{
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                p{
+                    width: 100%;
+                    color: white;
+                    font-size: .16rem;
+                    font-weight: bold;
+                    line-height: 150%;
+                }
+                h5{
+                    color: white;
+                    padding: .06rem 0 ;
+                    font-size: .14rem;
+                    font-weight: normal;
+                }
+            }
+        }
+    }
+    .routesSection{
+        background: white;
+        @include flexbox();
+        flex-direction: column;
+        a{
+            @include flexbox();
+            margin-top: .24rem;
+            flex-direction: column;
+            padding-bottom: .24rem;
+            box-sizing: border-box;
+            border-bottom: 1px solid #e8e8e8;
+            &:first-child{
+                margin: 0;
+            }
+            div{
+                @include flexbox();
+                flex-direction: row;
+                padding-bottom: .12rem;
+                img{
+                    width: 32%;
+                    display: block;
+                    height: 32%;
+                    margin-left: 2%;
+                    &:first-child{
+                        margin: 0;
+                    }
+                }
+            }
+            p{
+                font-size: .14rem;
+                color: #333;
+                &:nth-of-type(1){
+                    line-height: 150%;
+                }
+                &:nth-of-type(2){
+                    font-size: .12rem;
+                    margin-top: .12rem;
+                    span{
+                        &:last-of-type{
+                            i{
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .article{
+        background: white;
+        a{
+            display: block;
+            border-bottom: 1px solid #e8e8e8;
+            width: 100%;
+            margin-top: .18rem;
+            box-sizing: border-box;
+            &:first-of-type{
+                margin: 0;
+            }
+            figure{
+                img{
+                    width: 100%;
+                }
+            }
+            figcaption{
+                font-size: .14rem;
+                color: #333;
+                line-height: .28rem;
+                padding: .12rem;
+                text-align: center;
+            }
+        }
+    }
+    footer{
+        display: block;
+        text-align: center;
+        font-size: .14rem;
+        padding: .16rem 0;
+        a{
+            color: #1abc9c;
+        }
+    }
+}

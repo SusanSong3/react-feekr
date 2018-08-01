@@ -1,0 +1,318 @@
+@import '../../style/usage/core/reset.scss';
+$baseTextColor : #1ABC9C;
+.card{
+    background: white;
+    margin-top: 16px;
+    width: 100%;
+    height: auto;
+    >header{
+        padding: 24px 13.2px;
+        font-size: 18px;
+        i{
+            border-left: 3px solid $baseTextColor;
+            vertical-align: middle;
+        }
+        span{
+            padding: 0 12px;
+        }
+        b{
+            font-weight: normal;
+            color: #999;
+            font-size: 10px;
+        }
+    }
+    .news{
+        width: 100%;
+        height: auto;
+        border-top: 1px solid #f2f2f2;
+        border-bottom: 1px solid #f2f2f2;
+        background: white;
+        padding: 16.8px 13.2px;
+        @include flexbox();
+        flex-direction: column;
+        a{
+            @include flexbox();
+            align-items: center;
+            border-top: 1px solid #F2F2F2;
+            flex-direction: row;
+            color: #2d2d2d;
+            cursor: pointer;
+            margin-top: 13.2px;
+            height: auto;
+            padding-top: .132rem;
+            // box-sizing: border-box;
+            &:nth-child(1){
+                margin-top: 0;
+                border: 0;
+                padding: 0;
+            }
+            img{
+                width: 86px;
+                height: 86px;
+                display: block;
+            }
+            div{
+                @include flex();
+                margin-left: 28.8px;
+                color: #666;
+                p{
+                    font-weight: normal;
+                    &:nth-of-type(1){
+                        margin-bottom: 9.6px;
+                        font-size: .14rem;
+                        @include ellipsis(100%,2);
+                        color: #666;
+                        height: 40px;
+                    }
+                    &:nth-of-type(2){
+                        span{
+                            &:nth-of-type(2){
+                                padding: 0 12px;
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+    // 当季特惠
+    .product{
+        border-bottom: 1px solid #F2F2F2;
+        >div{
+            >p{
+                padding: .132rem;
+                @include flexbox();
+                flex-direction: row;
+                align-items: center;
+                span{
+                    color: #666;
+                    font-size: .14rem;
+                }
+                i{
+                    @include flex();
+                    border: .005rem solid #f6f6f6;
+                }
+                a{
+                    color: $baseTextColor;
+                    font-weight: 100;
+                }
+            }
+            >div{
+                width: 100%;
+                @include flexbox();
+                flex-direction: row;
+                padding: .168rem .132rem;
+                a{
+                    @include flex();
+                    @include flexbox();
+                    flex-direction: column;
+                    width: 32%;
+                    color: #2d2d2d;
+                    margin-left: 2%;
+                    text-align: center;
+                    img{
+                        width: 100%;
+                        line-height: 1.8;
+                        display: block;
+                        text-align: center;
+                        height: 1.11rem;
+                    }
+                    p{
+                        font-size: .12rem;
+                        font-weight: normal;
+                        line-height: 1.8;
+                        &:nth-of-type(1){
+                            @include ellipsis(100%,1);
+                            margin-top: .12rem;
+                            padding:0 .036rem;
+                        }
+                        &:nth-of-type(2){
+                            color: #666;
+                        }
+                        &:nth-of-type(3){
+                            color: #000;
+                        }
+                    }
+                    &:nth-child(1){
+                        margin: 0;
+                    }
+                }
+            }
+        }
+    }
+    // 目的地推荐
+    .guide{
+        padding: .096rem .132rem;
+        background: white;
+        @include flexbox();
+        flex-wrap: wrap;
+        border-top: 1px solid #F2F2F2;
+        border-bottom: 1px solid #F2F2F2;
+        a{
+            width: 49%;
+            margin-left: 2%;
+            padding: .12rem 0;
+            &:nth-child(odd){
+                margin: 0;
+            }
+            >div{
+                position: relative;
+                background: #000;
+                margin-bottom: .06rem;
+                img{
+                    width: 100%;
+                    height: .9rem;
+                    opacity: .7;
+                }
+                span{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    z-index: 1;
+                    color: white;
+                    font-size: .16rem;
+                }
+            }
+            p{
+                font-size: .12rem;
+                color: #2d2d2d;
+                text-align: center;
+            }
+        }
+    }
+    // 旅行达人
+    .ace{
+        background: white;
+        @include flexbox();
+        flex-direction: column;
+        border-top: 1px solid #F2F2F2;
+        border-bottom: 1px solid #F2F2F2;
+        >div{
+            border-bottom: 1px solid #F2F2F2;
+            padding: .24rem .132rem;
+            a{
+                @include flexbox();
+                align-items: center;
+                box-sizing: border-box;
+                img{
+                    border: 0;
+                    width: 1.26rem;
+                    box-sizing: border-box;
+                    display: block;
+                }
+                >div{
+                    margin-left: .18rem;
+                    @include flex();
+                    p{
+                        &:nth-of-type(1){
+                            font-size: .18rem;
+                            padding: .036rem ;
+                            line-height: .324rem;
+                            color: #2d2d2d;
+                        }
+                        &:nth-of-type(2){
+                            padding: .036rem;
+                            @include ellipsis(100%,3);
+                            font-size: .12rem;
+                            color: #999;
+                            line-height: 1.8;
+                            height: .68rem;
+                        }
+                        &:nth-of-type(3){
+                            padding: .036rem;
+                            font-size: .12rem;
+                            color: #2d2d2d;
+                        }
+                        &:nth-of-type(4){
+                            padding: .036rem;
+                            font-size: .12rem;
+                            color: #2d2d2d;
+                        }
+                    }
+                }
+            }
+            &:last-child{
+                border: none;
+            }
+        }
+    }
+    // 编辑精选
+    .editor{
+        background: white;
+        border-bottom: 1px solid #F2F2F2;
+        >div{
+            padding: 0 .132rem;
+            >p{
+                padding: .132rem;
+                @include flexbox();
+                flex-direction: row;
+                align-items: center;
+                span{
+                    color: #666;
+                    font-size: .14rem;
+                }
+                i{
+                    @include flex();
+                    border: .005rem solid #f6f6f6;
+                }
+                a{
+                    color: $baseTextColor;
+                    font-weight: 100;
+                }
+            }
+            >a{
+                padding-top: .24rem;
+                padding-bottom: .3rem;
+                color: #2d2d2d;
+                display: block;
+                border-bottom: 1px solid #f2f2f2;
+                &:last-child{
+                    border: 0;
+                }
+                >p{
+                    margin-bottom: .16rem;
+                    font-size: .16rem;
+                }
+                >div{
+                    @include flexbox();
+                    align-items: center;
+                    flex-direction: row;
+                    img{
+                        width: 1.62rem;
+                    }
+                    div{
+                        margin-left: .18rem;
+                        @include flex();
+                        line-height: 1.8;
+                        p{
+                            @include ellipsis(100%,2);
+                            font-size: .12rem;
+                            &:nth-child(2){
+                                margin-top: .096rem;
+                                white-space: pre-line;
+                                color: #999;
+                                span{
+                                    display: inline-block;
+                                    margin-right: .03rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    >footer{
+        padding: .24rem 0;
+        text-align: center;
+        a{
+            color: $baseTextColor;
+            cursor: pointer;
+            font-size: .14rem;
+            font-weight: normal;
+        }
+    }
+}
+

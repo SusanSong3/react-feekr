@@ -1,0 +1,82 @@
+@import '../../style/usage/core/reset.scss';
+$baseTextColor : #1ABC9C;
+.my{
+    height: 100%;
+    background: #f6f6f6;
+    .myHeader{
+        height: .48rem;
+        background: $baseTextColor;
+        text-align: center;
+        color: white;
+        font-size: .18rem;
+        line-height: .48rem;
+    }
+    >div{
+        padding-bottom: 1.25rem;
+        box-sizing: border-box;
+        >a{
+            padding: .24rem 0;
+            background: white;
+            width: 100%;
+            border-bottom: 1px solid #f5f5f5;
+            color: #333;
+            @include flexbox();
+            flex-direction: row;
+            >div{
+                width: 1.5rem;
+                overflow: hidden;
+                text-align: center;
+                img{
+                    width: .8rem;
+                    height: .8rem;
+                    border-radius: 50%;
+                }
+            }
+            >span{
+                line-height: .8rem;
+                width: 1.5rem;
+                &:nth-of-type(1){
+                    font-size: .16rem;
+                }
+                &:last-child{
+                    @include flex();
+                    font-size: .2rem;
+                }
+            }
+        }
+        .info{
+            background: white;
+            color: #2d2d2d;
+            margin-top: .18rem;
+            border-top: 1px solid #f5f5f5;
+            box-sizing: border-box;
+            a{
+                @include flexbox();
+                flex-direction: row;
+                padding: .18rem 0;
+                border-bottom: 1px solid #f5f5f5;
+                font-size: .14rem;
+                color: #333;
+                span{
+                    &:nth-of-type(1){
+                        width: 20%;
+                        font-size: .25rem;
+                        padding-left: .2rem;
+                        vertical-align: middle;
+                        box-sizing: border-box;
+                    }
+                    &:nth-of-type(2){
+                        width: 60%;
+                        padding-left: .2rem;
+                        vertical-align: middle;
+                    }
+                    &:nth-of-type(3){
+                        @include flex();
+                    }
+                }
+            }
+        }
+        
+    }
+    
+}

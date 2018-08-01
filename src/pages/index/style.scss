@@ -1,0 +1,22 @@
+// 搜素框
+.am-search {
+    padding: 12px 12px;
+    height: 64px;
+    background: #F6F6F6;
+    >div{
+        height: 32px;
+        line-height: 32px;
+        border: 1px solid #E8E8E8;
+        input{
+            height: 32px;
+            line-height: 32px;
+            
+        }
+        
+    }
+  }
+.am-grid{
+    height: 97px;
+    padding: 18px 0;
+    background: white;
+}
