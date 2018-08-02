@@ -1,10 +1,10 @@
 import Ui from './views/Ui'
 
-// import reducer from './reducer'
+import reducer from './reducer'
 
-// import * as strategyActionTypes from './actionTypes'
+import * as strategyListActionTypes from './actionTypes'
 export {
     Ui,
-    // reducer,
-    // strategyActionTypes
+    reducer,
+    strategyListActionTypes
 }

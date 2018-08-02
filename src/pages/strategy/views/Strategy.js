@@ -23,7 +23,6 @@ class Strategy extends Component {
         //当季小众推荐
         const guideContent = this.props.guideList.slice(0,4).map((value) => (
             <a key={value.scenic} onClick={this.handleCityClick.bind(this,value.scenic)}>
-                
                 <img src={value.cover+"!621X327"} alt={value.cityName}/>
                 <p>{value.cityName}</p>
                 <p>{value.desc}</p>
@@ -56,7 +55,7 @@ class Strategy extends Component {
                                 <div>
                                     {
                                         value.city.map((item) => (
-                                            <a key={item.id}>
+                                            <a key={item.id} onClick={this.handleCityClick.bind(this,item.id)}>
                                                 <img src={item.cover+"!412X310"} alt={""}/>
                                                 <p>{item.name}</p>
                                             </a>

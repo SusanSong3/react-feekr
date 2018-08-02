@@ -1,0 +1,24 @@
+@import '../../style/usage/core/reset.scss';
+.qrcode{
+    background: white;
+    padding:.24rem;
+    text-align: center;
+    border-top: 1px solid #e8e8e8;
+    h1{
+        font-size: .4rem;
+        font-weight: normal;
+    }
+    p{
+        font-size: .12rem;
+    }
+    img{
+        &:nth-of-type(1){
+            width: 60%;
+            margin: .24rem .65rem 0;
+        }
+        &:nth-of-type(2){
+            width: 40%;
+            margin: .12rem .98rem 0;
+        }
+    }
+}

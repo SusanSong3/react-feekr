@@ -25,36 +25,35 @@ class Index extends Component {
             productsData:[],
             aceData:[],
             editorData:[],
+            grid:[
+                {
+                    icon:strategyIcon,
+                    text:'攻略'
+                },
+                {
+                    icon:vacationIcon,
+                    text:'度假'
+                },
+                {
+                    icon:playIcon,
+                    text:'玩乐'
+                },
+                {
+                    icon:itemIcon,
+                    text:'美物'
+                },
+                {
+                    icon:laboratoryIcon,
+                    text:'研究所'
+                }]
         }
     }
     
     render() {
-        const grid = [
-            {
-                icon:strategyIcon,
-                text:'攻略'
-            },
-            {
-                icon:vacationIcon,
-                text:'度假'
-            },
-            {
-                icon:playIcon,
-                text:'玩乐'
-            },
-            {
-                icon:itemIcon,
-                text:'美物'
-            },
-            {
-                icon:laboratoryIcon,
-                text:'研究所'
-            },
-        ];
         //最新旅行资讯
         const newsSection = this.state.newsData.map(value => (
-            <a key={value.id}>
-                <img src={value.cover} alt=""/>
+            <a key={value.id}  onClick={this.handleNewsClick.bind(this,value.id)}>
+                <img src={value.cover+'!300X300'} alt=""/>
                 <div>
                     <p>{value.title}</p>
                     <p>
@@ -74,7 +73,7 @@ class Index extends Component {
                 <div>
                     {value.list.map(item => (
                         <a key={item.productId}>
-                            <img src={item.productCover} alt=""/>
+                            <img src={item.productCover+'!200X200'} alt=""/>
                             <p>{item.productName}</p>
                             <p><span>{item.productArea}</span><span>-</span><span>{item.productCity}</span></p>
                             <p>¥{item.productPrice}起</p>
@@ -83,11 +82,10 @@ class Index extends Component {
                 </div>
             </div>))
         // 目的地推荐
-        
-        const guideSection = this.props.guideList.slice(0,4).map((value,index) => (
-            <a key={index}>
+        const guideSection = this.props.guideList.slice(0,4).map((value) => (
+            <a key={value.scenic}>
                 <div>
-                    <img src={value.cover} alt=""/>
+                    <img src={value.cover+'!621X327'} alt=""/>
                     <span>{value.cityName}</span>
                 </div>
                 <p>{value.fxb}位当地飞小编推荐</p>
@@ -165,7 +163,7 @@ class Index extends Component {
                 ))}
                 </Carousel>
                 <SearchBar placeholder="搜索目的地/攻略/旅行资讯" maxLength={8} disabled="false" styleName="am-search"/>
-                <Grid data={grid} activeStyle={false} hasLine={false} columnNum={5} styleName="am-grid"
+                <Grid data={this.state.grid} activeStyle={false} hasLine={false} columnNum={5} styleName="am-grid"
                 renderItem={dataItem => (
                     <div style={{marginTop:'-10px'}}>
                       <img src={dataItem.icon} style={{ width: '40px', height: '40px' }} alt="" />
@@ -273,7 +271,14 @@ class Index extends Component {
             })
         })
     }
-
+    handleNewsClick(el){
+        this.props.history.push({
+            pathname:'/detail/:'+el,
+            state:el,
+        })
+    }
+    //lZRrnA==
+    //lZRrnA%3D%3D
 }
 
 export default Index;

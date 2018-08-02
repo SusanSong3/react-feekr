@@ -1,16 +1,16 @@
 import { connect } from 'react-redux'
 import Detail from './Detail'
+// import { getQRCodeContent } from '../actionCreator'
+const mapStateToProps = (store) => {
+  return {
+     
+  }
+}
 
-export default connect(
-    state => {
-      return{
-
-      }
-    },
-    dispatch => {
-      return{
-
-      }
-    }
+const mapDispatchToProps = (dispatch) => {
+  return {
     
-)(Detail)
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Detail)

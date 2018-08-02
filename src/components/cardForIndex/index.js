@@ -22,11 +22,7 @@ class CardForIndex extends Component {
                 <section styleName={this.props.itemClassName}>
                     {
                        this.props.sectionContent
-                    }       
-                     
-                    {/* {
-                        
-                    } */}
+                    }      
                 </section>
                 <footer style={ this.props.isShowFooter ? {display:"block"} : {display:"none"}}>
                     <a>{this.props.bottomTitle}</a>

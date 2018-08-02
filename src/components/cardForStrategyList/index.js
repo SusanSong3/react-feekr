@@ -7,16 +7,15 @@ class CardForStrategyList extends Component {
         this.state = {  };
     }
     render() {
-        // console.log(this.props.className)
         return (
             <div styleName="card">
                 <header>{this.props.title}</header>
-                <div styleName={this.props.className}>
+                <div styleName={this.props.classname}>
                     {
                         this.props.content
                     }
                 </div>
-                <footer><a href="">{this.props.more}</a></footer>
+                <footer style={this.props.more === "" ? {display:'none'} : {display:'block'} }><a href="">{this.props.more}</a></footer>
             </div>
         );
     }

@@ -105,9 +105,9 @@ class Home extends Component {
             <p style={{
               lineHeight:'30px'
             }}>这里跳转到了一个商城网站</p>
-            <p>结构跟现在这个网站是一样的</p>
-            <p>就不写啦！</p>
-            <p>写完用"WebView"组件包起来就ok</p>
+            <p>先空在这里</p>
+            <p>待我写完微信小程序</p>
+            <p>用"WebView"包起来就ok</p>
           </div>
         </TabBar.Item>
         <TabBar.Item

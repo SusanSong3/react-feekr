@@ -13,11 +13,13 @@ class StrategyList extends Component {
             themeList:[],
             routesList:[],
             articleList:[],
+            shopList:[],
+            nearbyList:[]
          };
     }
     render() {
         //主题推荐
-        const theme = this.state.themeList.map((value) => (
+        const theme = this.props.themeList.map((value) => (
             <a key={value.id}>
                 <figure>
                     <img src={value.cover+"!640X270"} alt={value.title}/>
@@ -61,6 +63,31 @@ class StrategyList extends Component {
                 </figcaption>
             </a>
         ))
+        // 玩乐度假
+        const shop = this.state.shopList.map(value => (
+            <a key={value.productId}>
+                <figure>
+                    <img src={value.cover+"!640X360"} alt={value.id}/>
+                </figure>
+                <figcaption>
+                    <p>{value.title}</p>
+                    <h5>{value.area} － {value.site}</h5>
+                    <h6>¥{value.price}起</h6>
+                </figcaption>
+            </a>
+        ))
+        // 周边城市
+        const nearby = this.state.nearbyList.map(value => (
+            <a key={value.id}>
+                <figure>
+                    <img src={value.cover+"!300X225"} alt={value.id}/>
+                </figure>
+                <figcaption>
+                    <p>{value.name}</p>
+                    <h5>距离 {value.distance} 公里</h5>
+                </figcaption>
+            </a>
+        ))
         return (
             <div style={{background:"#f6f6f6",width:'100%', height : '6.67rem' ,paddingBottom:"18px",overflow:'scroll'}}>
                 <div styleName="top">
@@ -72,25 +99,39 @@ class StrategyList extends Component {
                 </div>
                 <StrategyNav/>
                 <CardForStrategyList
-                title="- 主题推荐 -"
+                title="－ 主题推荐 －"
                 more="更多主题推荐"
                 data={this.state.themeList}
-                className="themeSection"
+                classname="themeSection"
                 content={theme}
                 />
                 <CardForStrategyList
-                title="- 路线推荐 -"
+                title="－ 路线推荐 －"
                 more="更多路线"
                 data={this.state.routesList}
-                className="routesSection"
+                classname="routesSection"
                 content={routes}
                 />
                 <CardForStrategyList
-                title="- 私藏资讯 -"
+                title="－ 私藏资讯 －"
                 more="更多私藏资讯"
                 data={this.state.articleList}
-                className="article"
+                classname="article"
                 content={article}
+                />
+                <CardForStrategyList
+                title="－ 玩乐度假 －"
+                more="更多玩乐度假"
+                data={this.state.shopList}
+                classname="shopSection"
+                content={shop}
+                />
+                <CardForStrategyList
+                title="－ 周边城市 －"
+                more=""
+                data={this.state.nearbyList}
+                classname="nearby"
+                content={nearby}
                 />
             </div>
         );
@@ -111,18 +152,7 @@ class StrategyList extends Component {
           })
         })
         //主题推荐
-        fetch(`/api/guide/themelist?id=${id}&count=3&recommend=1`)
-        .then(response => response.json())
-        .then(result => {
-          this.setState((prevState) => {
-            return {
-                themeList:[
-                    ...prevState.themeList,
-                    ...result.result.list
-                ]
-            }
-          })
-        })
+        this.props.getThemeList(id)
         // 路线推荐
         fetch(`/api/guide/pathlist?id=${id}&count=2&recommend=1`)
         .then(response => response.json())
@@ -144,6 +174,32 @@ class StrategyList extends Component {
             return {
                 articleList:[
                     ...prevState.articleList,
+                    ...result.result.list
+                ]
+            }
+          })
+        })
+        // 玩乐度假
+        fetch(`/api/guide/shoplist?id=${id}&count=2&recommend=1`)
+        .then(response => response.json())
+        .then(result => {
+          this.setState((prevState) => {
+            return {
+                shopList:[
+                    ...prevState.shopList,
+                    ...result.result.list
+                ]
+            }
+          })
+        })
+        // 周边城市
+        fetch(`/api/guide/nearby?cityId=${id}`)
+        .then(response => response.json())
+        .then(result => {
+          this.setState((prevState) => {
+            return {
+                nearbyList:[
+                    ...prevState.nearbyList,
                     ...result.result.list
                 ]
             }

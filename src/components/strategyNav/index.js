@@ -12,30 +12,30 @@ class strategyNav extends Component {
     render() {
         return (
             <div styleName="nav">
-                <div>
+                <a>
                    <div>
                         <img src={scenery} alt="scenery"/>
                    </div>
                      <span>美景</span>
-                </div>
-               <div>
+                </a>
+               <a>
                     <div>
                         <img src={food} alt="food"/>
                    </div>
                      <span>美食</span>
-               </div>
-               <div>
+               </a>
+               <a>
                     <div>
                         <img src={bed} alt="bed"/>
                    </div>
                     <span>美宿</span>
-               </div>
-                <div>
+               </a>
+                <a>
                     <div>
                         <img src={cart} alt="cart"/>
                    </div>
                     <span>美物</span>
-                </div>
+                </a>
                 
             </div>
         );

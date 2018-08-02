@@ -1,18 +1,20 @@
 import { connect } from 'react-redux'
-// import { isSignin } from '../actionCreator'
 
 import StrategyList from './StrategyList'
-// import { IS_SIGNIN } from '../actionTypes';
-// import { getAsyncThumbList , getAsyncGuideList } from '../actionCreator'
+
+import {  getAsyncThemeList } from '../actionCreator'
 
 
 const mapStateToProps = (store) => {
   return {
-    
+    themeList:store.strategyList.themeList
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
+    getThemeList(id){
+      dispatch(getAsyncThemeList(id))
+    }
     
   }
 }
