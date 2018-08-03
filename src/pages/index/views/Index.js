@@ -273,7 +273,7 @@ class Index extends Component {
     }
     handleNewsClick(el){
         this.props.history.push({
-            pathname:'/detail/:'+el,
+            pathname:'/detail:'+el,
             state:el,
         })
     }

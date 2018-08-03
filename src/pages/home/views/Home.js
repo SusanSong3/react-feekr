@@ -53,7 +53,7 @@ class Home extends Component {
             height: '22px',
             background: 'url(' + indexIconLight + ') center center /  21px 21px no-repeat' }}
           />
-          }
+          }   
           selected={this.state.selectedTab === 'indexTab'}
           onPress={() => {
             this.setState({
@@ -63,7 +63,7 @@ class Home extends Component {
           }}
           data-seed="logId"
         >
-          <Route path="/home" component={Index}/>
+          <Route path="/" component={Index}/>
         </TabBar.Item>
         <TabBar.Item
           icon={
@@ -164,12 +164,22 @@ class Home extends Component {
   }
 
   componentDidMount(){
+    this.setSelectedTab()
+    console.log(this.props.location.pathname)
+  }
+  setSelectedTab(){
+    let tab = this.props.location.pathname.slice(6)+'Tab'
+    console.log(tab)
+    if(tab === "Tab"){
+      this.setState({
+        selectedTab:"indexTab"
+      })
+    }else{
+      this.setState({
+        selectedTab:tab
+      })
+    }
     
-    // let from = this.props.location.pathname.substr(6)
-    // console.log(from)
-    // this.setState({
-    //   selectedTab: from || 'indexTab'
-    // })
   }
 }
 

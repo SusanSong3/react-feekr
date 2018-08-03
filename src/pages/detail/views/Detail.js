@@ -1,4 +1,4 @@
-import React, { Component ,Fragment} from 'react';
+import React, { Component } from 'react';
 import { NavBar, ActionSheet} from 'antd-mobile';
 
 import back from '../../../assets/icons/back.svg'
@@ -9,9 +9,9 @@ import '../style.scss'
 
 import QRCode from '../../../components/qrCode'
 const isIPhone = new RegExp('\\biPhone\\b|\\biPod\\b', 'i').test(window.navigator.userAgent);
-let wrapProps;
+
 if (isIPhone) {
-  wrapProps = {
+    let wrapProps = {
     onTouchStart: e => e.preventDefault(),
   };
 }
